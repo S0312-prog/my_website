@@ -8,19 +8,21 @@ export default function Experience() {
       organization: "Center for Radio Astronomy and Astrophysics Mackenzie (CRAAM)",
       period: "Aug 2025 – Present",
       description: [
-        "Investigating morphology and temporal evolution of solar active regions at 30 THz using AR30T data.",
-        "Computing Contribution Functions (CFs) using semi-empirical solar atmospheric models (VAL/FAL) to determine formation heights.",
-        "Applying temporal averaging and cross-correlation to suppress noise and analyze solar oscillations."
+        "Investigating morphology and temporal evolution of solar active regions at 30 THz using AR30T and SP30T data.",
+        "Computing Contribution Functions (CFs) using semi-empirical solar atmospheric models (VAL/FAL) to determine formation heights across instrument bandpasses.",
+        "Applying temporal averaging and cross-correlation to suppress noise and analyze solar oscillations.",
+        "Created a catalogue of AR30T observations in UTC."
       ]
     },
     {
       title: "Independent Research",
       organization: "ISRO - Satellite Integration and Test Establishment (ISITE)",
+      mentor: "Mentor: Abhilash Rajendra Sarwade, Scientist, ISRO",
       period: "Aug 2024 – Aug 2025",
       description: [
         "Conducted time-resolved spectral analysis of solar flares to extract plasma parameters and elemental abundances (Fe, Ni, Ca, Ar, S) using PyXspec/XSPEC.",
         "Developed a comparative study of flares using data from Chandrayaan-2 (XSM) and Aditya-L1 (SOLEXS).",
-        "Presented research as a poster at the III Academic Week of Space Geophysics (SAGE III) at INPE, selected as a 'Featured Paper'."
+        "Presented the work as a poster at the III Academic Week of Space Geophysics (SAGE III) at INPE (Sep 2025), where it was selected as a Featured Paper."
       ]
     },
     {
@@ -66,10 +68,11 @@ export default function Experience() {
                   <div className="hidden md:block absolute -left-9 top-4 bottom-[-3rem] w-px bg-slate-800"></div>
 
                   <h3 className="text-xl font-semibold text-slate-50 mb-1">{exp.title}</h3>
-                  <h4 className="text-amber-500/90 font-medium mb-4 flex items-center gap-2">
+                  <h4 className={`text-amber-500/90 font-medium flex items-center gap-2 ${exp.mentor ? 'mb-1' : 'mb-4'}`}>
                     <Telescope size={16} />
                     {exp.organization}
                   </h4>
+                  {exp.mentor && <p className="text-slate-400 text-sm mb-4">{exp.mentor}</p>}
                   <ul className="space-y-2">
                     {exp.description.map((item, i) => (
                       <li key={i} className="text-slate-300 text-sm leading-relaxed flex items-start gap-2">

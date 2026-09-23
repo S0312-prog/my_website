@@ -17,8 +17,9 @@ export default function Navbar() {
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Ongoing Research', href: '#ongoing-research' },
+    { name: 'Research', href: '#ongoing-research' },
     { name: 'Publications', href: '#publications' },
+    { name: 'Talks', href: '#talks' },
     { name: 'Contact', href: '#contact' },
   ];
 
