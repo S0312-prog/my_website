@@ -1,8 +1,3 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
 import { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
@@ -39,7 +34,6 @@ export default function App() {
           poster="https://sdo.gsfc.nasa.gov/assets/img/browse/2012/08/31/20120831_000000_1024_0171.jpg"
           className={`w-full h-full object-cover transition-opacity duration-1000 ${isHome ? 'opacity-75' : 'opacity-60'}`}
         >
-          {/* Local video file - User can upload their AIA video here */}
           <source src="/images/videos/sun.mp4" type="video/mp4" />
         </video>
         <div className={`absolute inset-0 transition-colors duration-1000 ${isHome ? 'bg-gradient-to-b from-transparent via-slate-950/60 to-slate-950/90' : 'bg-slate-950/80'}`}></div>

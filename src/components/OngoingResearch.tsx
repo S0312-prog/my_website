@@ -14,7 +14,7 @@ export default function OngoingResearch() {
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ongoing Research</h2>
           <div className="w-20 h-1 bg-amber-500 rounded-full mb-8"></div>
           <p className="text-lg text-slate-300 leading-relaxed">
-            A deep dive into my current active projects. I regularly update these sections with my progress, preliminary findings, and upcoming visual data.
+            The projects I am working on now, with their current results and figures.
           </p>
         </motion.div>
 
