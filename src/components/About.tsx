@@ -65,7 +65,7 @@ export default function About() {
               <div>
                 <h4 className="text-lg font-medium text-slate-200">BSc (Honours) in Physics</h4>
                 <p className="text-amber-500/80 text-sm mb-2">University of Delhi, Miranda House | Nov 2021 – July 2024</p>
-                <p className="text-slate-400 text-sm">CGPA 7.959/10. Recipient of the INSPIRE Scholarship (top 1% of national science students).</p>
+                <p className="text-slate-400 text-sm">Recipient of the INSPIRE Scholarship (top 1% of national science students).</p>
               </div>
             </div>
           </motion.div>
