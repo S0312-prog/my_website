@@ -4,7 +4,7 @@ import { ChevronDown, Mail, Github, Linkedin } from 'lucide-react';
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Solar Flare Background Effect (kept for extra glow over the video) */}
+      {/* Glow over the background video */}
       <div className="absolute inset-0 z-0 pointer-events-none">
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-amber-500/10 rounded-full blur-[120px] opacity-50 mix-blend-screen"></div>
         <div className="absolute top-1/3 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-orange-600/10 rounded-full blur-[100px] opacity-40 mix-blend-screen"></div>
@@ -24,7 +24,7 @@ export default function Hero() {
             Soumya Shree S
           </h1>
           <p className="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed drop-shadow-md font-medium">
-            Investigating solar flares, X-ray spectroscopy, and mid-infrared solar diagnostics to unravel the mysteries of our closest star.
+            I study the solar atmosphere through mid-infrared observations, sunspot oscillations and solar flares.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
