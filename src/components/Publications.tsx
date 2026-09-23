@@ -1,20 +1,29 @@
-import { useState } from 'react';
 import { motion } from 'motion/react';
-import { BookOpen, Code2, ExternalLink, FileText } from 'lucide-react';
-import PaperModal from './PaperModal';
+import { BookOpen, Code2, ExternalLink } from 'lucide-react';
 
 export default function Publications() {
-  const [isPaperModalOpen, setIsPaperModalOpen] = useState(false);
-
-  const skills = [
-    "Python (NumPy, SciPy, Matplotlib, SunPy)",
-    "IDL, Scilab, LaTeX, Git/GitHub",
-    "PyXspec/XSPEC, Sherpa, OSPEX",
-    "HEASoft/FTOOLS, TOPCAT, MESA",
-    "X-ray Spectroscopy",
-    "Spectral Fitting (Isothermal/Multi-thermal)",
-    "Data Calibration & FITS Handling",
-    "MCMC Analysis"
+  const skillGroups = [
+    {
+      name: "Programming",
+      skills: ["Python (NumPy, SciPy, Matplotlib, SunPy)", "IDL", "Scilab", "LaTeX", "Git/GitHub"]
+    },
+    {
+      name: "Specialized Tools",
+      skills: ["PyXspec/XSPEC", "Sherpa", "OSPEX", "HEASoft/FTOOLS", "TOPCAT", "MESA", "PAKAL 3D"]
+    },
+    {
+      name: "Methods",
+      skills: [
+        "X-ray Spectroscopy",
+        "Spectral Fitting (Isothermal/Multi-thermal)",
+        "Multi-instrument Data Calibration & Analysis",
+        "FITS Handling",
+        "MCMC Analysis",
+        "Wavelet Analysis",
+        "Fast Fourier Transform",
+        "1D Solar Atmospheric Modeling"
+      ]
+    }
   ];
 
   return (
@@ -28,11 +37,21 @@ export default function Publications() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4 flex items-center gap-3">
               <BookOpen className="text-amber-500" />
-              Completed Works & Publications
+              Publications
             </h2>
             <div className="w-20 h-1 bg-amber-500 rounded-full mb-10"></div>
 
             <div className="space-y-6">
+              <div className="block bg-slate-950/80 p-6 rounded-xl border border-slate-800 relative overflow-hidden">
+                <div className="absolute top-0 right-0 bg-slate-700 text-slate-100 text-[10px] font-bold px-3 py-1 rounded-bl-lg uppercase tracking-wider z-10">
+                  In Preparation
+                </div>
+                <p className="text-slate-300 text-sm leading-relaxed mb-3 mt-2">
+                  <span className="font-semibold text-slate-100">Sadangaya, S. S., Giménez de Castro, C. G., Perriyil, S. M., Simões, P. J. A., & Cauzzi, G.</span> "Delayed Amplification of Sub-cutoff Evanescent Oscillations in the Squeezed Umbral Column at 30 THz Following an X-Class Flare."
+                </p>
+                <p className="text-amber-500 text-sm font-medium mt-4">To be submitted to The Astrophysical Journal</p>
+              </div>
+
               <a href="https://iopscience.iop.org/article/10.3847/1538-4357/ae3061" target="_blank" rel="noopener noreferrer" className="block bg-slate-950/80 p-6 rounded-xl border border-slate-800 hover:border-amber-500/50 hover:bg-slate-900 transition-all group">
                 <p className="text-slate-300 text-sm leading-relaxed mb-3">
                   <span className="font-semibold text-slate-100 group-hover:text-amber-400 transition-colors">Perriyil, S. M., Sadangaya, S. S., Castro, C. G. G. d., & Simões, P. J. A. (2026).</span> "Observational Evidence Linking Loop Length and Thermal–Nonthermal Peak Timing in Solar Flares."
@@ -58,8 +77,6 @@ export default function Publications() {
                   <ExternalLink size={18} className="text-slate-500 group-hover:text-amber-500 transition-colors shrink-0" />
                 </div>
               </a>
-
-
             </div>
           </motion.div>
 
@@ -74,44 +91,23 @@ export default function Publications() {
             </h2>
             <div className="w-20 h-1 bg-amber-500 rounded-full mb-10"></div>
 
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill, i) => (
-                <span key={i} className="px-4 py-2 bg-slate-950/80 border border-slate-700 rounded-full text-sm text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">
-                  {skill}
-                </span>
+            <div className="space-y-8">
+              {skillGroups.map((group) => (
+                <div key={group.name}>
+                  <h3 className="text-sm font-semibold text-slate-100 uppercase tracking-wider mb-3">{group.name}</h3>
+                  <div className="flex flex-wrap gap-3">
+                    {group.skills.map((skill) => (
+                      <span key={skill} className="px-4 py-2 bg-slate-950/80 border border-slate-700 rounded-full text-sm text-slate-300 hover:border-amber-500/50 hover:text-amber-400 transition-colors cursor-default">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
               ))}
-            </div>
-
-            <div className="mt-12 bg-slate-950/50 p-6 rounded-xl border border-slate-800/50">
-              <h3 className="text-xl font-semibold mb-4 text-slate-100">Citizen Science</h3>
-              <ul className="space-y-3">
-                <li className="text-sm text-slate-300 flex items-start gap-2">
-                  <span className="text-amber-500 mt-1">✦</span>
-                  Solar Radio Burst Tracker (current).
-                </li>
-                <li className="text-sm text-slate-300 flex items-start gap-2">
-                  <span className="text-amber-500 mt-1">✦</span>
-                  English teacher in BridgeLang, A brand of Bridge Electronics EIRL.
-                </li>
-                <li className="text-sm text-slate-300 flex items-start gap-2">
-                  <span className="text-amber-500 mt-1">✦</span>
-                  Radio Galaxy Zoo EMU and Eclipsing Binary Patrol (Analyzing stellar light curves).
-                </li>
-                <li className="text-sm text-slate-300 flex items-start gap-2">
-                  <span className="text-amber-500 mt-1">✦</span>
-                  Vidyut Physics Society: Research and Editorial Board (MH).
-                </li>
-                <li className="text-sm text-slate-300 flex items-start gap-2">
-                  <span className="text-amber-500 mt-1">✦</span>
-                  Teaching Intern: Taught Maths and Science to underprevileged children (SAMBHAJ NGO).
-                </li>
-              </ul>
             </div>
           </motion.div>
         </div>
       </div>
-      
-      <PaperModal isOpen={isPaperModalOpen} onClose={() => setIsPaperModalOpen(false)} />
     </section>
   );
 }

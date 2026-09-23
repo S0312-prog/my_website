@@ -32,24 +32,42 @@ export default function OngoingResearch() {
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-slate-50">Modeling Solar Atmospheres</h3>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-10 mb-8">
-              <div className="space-y-8">
-                <div>
-                  <h4 className="text-xl font-semibold text-amber-400 mb-3">Observational Analysis & Radiative Transfer Modeling</h4>
-                  <p className="text-slate-300 leading-relaxed text-sm mb-3">
-                    Using the AR30T telescope, I am analyzing mid-infrared (30 THz, ~10 μm) diagnostics of solar active regions. For our primary case study, AR 13777, we extracted a 7-hour time-averaged brightness temperature profile and simulated beam-smearing effects. The quiescent umbral minimum of ~4700 K reveals a static excess of ~300 K above the corrected instrumental floor, preceding any flare activity.
-                  </p>
-                  <p className="text-slate-300 leading-relaxed text-sm">
-                    Simultaneously, we model synthetic brightness temperatures using the PAKAL 3D radiative transfer code. Our results show that while 1D standard models overpredict Quiet Sun temperatures (predicting ~5650 K), our 3D treatment successfully reproduces ~5160 K by identifying an emission void near 0.75 Mm. Conversely, standard models underpredict umbral temperatures. This systematic inversion suggests 1D models fail to correctly represent the 3D opacity structure of the lower solar atmosphere above sunspots.
-                  </p>
-                </div>
+              <div>
+                <h4 className="text-xl font-semibold text-amber-400 mb-3">Radiative Transfer Modeling at 30 THz</h4>
+                <p className="text-slate-300 leading-relaxed text-sm mb-5">
+                  I compare AR30T observations of solar active regions at 30 THz (~10 μm) with synthetic brightness temperatures (Tb) and Contribution Functions computed with the PAKAL 3D radiative transfer code for four 1D semi-empirical atmospheres: the C7 quiet-Sun, VAL-C, Maltby M umbral and a penumbral model.
+                </p>
+                <h5 className="text-sm font-semibold text-slate-100 uppercase tracking-wider mb-3">Key Results</h5>
+                <ul className="space-y-3">
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span>Developed and validated a bandpass-convolved Contribution Function method that integrates the synthetic emission over the full AR30T filter response, the first application of this approach to 30 THz solar data.</span>
+                  </li>
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span><strong className="text-slate-100">Quiet Sun:</strong> the C7 model predicts Tb ≈ 5650 K. The PAKAL 3D treatment gives a dual-peaked Contribution Function with an emission void near 0.75 Mm and lowers Tb to ≈ 5160 K, closer to early mid-IR observations.</span>
+                  </li>
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span><strong className="text-slate-100">Sunspot umbra:</strong> in AR 13777 the 7-hour averaged umbral minimum is ≈ 4700 K. After correcting for beam smearing, a static excess of ≈ 300 K remains that instrumental effects cannot explain, and the Maltby M umbral model underpredicts the observed Tb.</span>
+                  </li>
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span>1D models overpredict Tb in the quiet Sun but underpredict it in the umbra, the reverse of the umbral pattern seen at millimetre wavelengths. This points to 1D models misrepresenting the 3D opacity structure and formation-height geometry above sunspots.</span>
+                  </li>
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span><strong className="text-slate-100">Next:</strong> apply the bandpass-convolved method to the full active-region sample.</span>
+                  </li>
+                </ul>
               </div>
               <div className="flex flex-col gap-6">
                 <div className="bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
-                  <img 
-                    src="/images/Screenshot from 2026-03-15 15-36-53.png" 
-                    alt="Contribution Function vs Height for various models including PAKAL" 
+                  <img
+                    src="/images/contribution-function-pakal.png"
+                    alt="Contribution Function vs Height for various models including PAKAL"
                     className="w-full h-auto object-cover"
                   />
                   <div className="p-4 border-t border-slate-800">
@@ -58,22 +76,22 @@ export default function OngoingResearch() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
-                  <img 
-                    src="/images/Screenshot from 2026-03-15 15-40-06.png" 
-                    alt="Comparison of Tb at 10 μm: Models vs. Observations" 
+                  <img
+                    src="/images/tb-10um-models-vs-observations.png"
+                    alt="Comparison of Tb at 10 μm: Models vs. Observations"
                     className="w-full h-auto object-cover"
                   />
                   <div className="p-4 border-t border-slate-800">
                     <p className="text-xs text-slate-400 text-center">
-                      Comparison of Brightness Temperature (Tb) at 10 μm showing the discrepancy between 1D semi-empirical models and observational data.
+                      Quiet-Sun Tb at 10 μm: 1D semi-empirical models (blue) against the observed value (red, ±70 K).
                     </p>
                   </div>
                 </div>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-4 pt-6 border-t border-slate-800/50">
               <span className="flex items-center gap-2 text-sm font-medium text-slate-400 bg-slate-900/50 px-4 py-2 rounded-lg border border-slate-800 cursor-not-allowed">
                 <Construction size={16} className="text-amber-500" />
@@ -95,24 +113,46 @@ export default function OngoingResearch() {
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-slate-50">Solar Oscillation Studies</h3>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-10 mb-8">
-              <div className="space-y-8">
-                <div>
-                  <h4 className="text-xl font-semibold text-amber-400 mb-3">Post-Flare Amplification of Umbral Oscillations</h4>
-                  <p className="text-slate-300 leading-relaxed text-sm mb-3">
-                    Currently under internal review, this study investigates 3-minute umbral oscillations following the SOL2024-08-08 X1.3-class flare. By utilizing simultaneously acquired data from the DKIST Visible Broadband Imager (VBI) and the AR30T telescope, we observed a near-zero phase lag (3.2 ± 1.88 s) between the deep photospheric wave field and the mid-IR chromospheric signal, indicating the entire umbral column oscillates as a phase-locked coherent unit.
-                  </p>
-                  <p className="text-slate-300 leading-relaxed text-sm">
-                    We also found a temporal disconnect of ~54 minutes between the flare's impulsive phase and the sustained 30 THz wave amplification. This delay is interpreted as evidence for a two-stage process: initial mechanical perturbation, followed by a gradual thermodynamic density enhancement that tunes the opacity, shifting the 30 THz formation height upward into the oscillating umbral chromosphere. These findings have been accepted for a contributed talk at the 57th AAS/SPD Meeting.
-                  </p>
+              <div>
+                <h4 className="text-xl font-semibold text-amber-400 mb-3">Post-Flare Amplification of Umbral Oscillations</h4>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  <span className="px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded-full text-xs font-medium text-amber-400">In preparation for ApJ</span>
+                  <span className="px-3 py-1 bg-slate-900/80 border border-slate-700 rounded-full text-xs font-medium text-slate-300">Talk at the 57th SPD Meeting</span>
                 </div>
+                <p className="text-slate-300 leading-relaxed text-sm mb-5">
+                  AR30T observations at 10 μm (30 THz) of the sunspot umbra in AR 13777 following the SOL2024-08-08 X1.3-class flare.
+                </p>
+                <h5 className="text-sm font-semibold text-slate-100 uppercase tracking-wider mb-3">Key Results</h5>
+                <ul className="space-y-3">
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span>Sub-cutoff 3-minute oscillations are detected in the umbra, while 5-minute power stays below the 95% significance level.</span>
+                  </li>
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span>The sustained wave amplification begins ~54 minutes after the flare's impulsive phase.</span>
+                  </li>
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span><strong className="text-slate-100">Frequency drift:</strong> wavelet analysis shows three successive wave trains whose mean period falls from ≈ 247 s to ≈ 223 s (ΔP ≈ −25 s).</span>
+                  </li>
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span>The 10 μm brightness temperature stays stable (σ ≈ 14 K), so the drift is not caused by cooling. The periods lie between the isothermal (258 s) and adiabatic (200 s) acoustic cutoffs, consistent with the formation height rising into layers with longer radiative relaxation times.</span>
+                  </li>
+                  <li className="text-sm text-slate-300 flex items-start gap-2">
+                    <span className="text-amber-500 mt-1">✦</span>
+                    <span>Proposed two-step picture: the flare first excites the umbral column mechanically; later, coronal-rain mass loading raises the free–free opacity and lifts the 10 μm formation height by ~200–250 km.</span>
+                  </li>
+                </ul>
               </div>
               <div className="flex flex-col gap-6">
                 <div className="bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
-                  <img 
-                    src="/images/Screenshot from 2026-03-15 15-52-11.png" 
-                    alt="Umbral Oscillations: Global Power vs. 95% Significance Level" 
+                  <img
+                    src="/images/umbral-oscillations-global-power.png"
+                    alt="Umbral Oscillations: Global Power vs. 95% Significance Level"
                     className="w-full h-auto object-cover bg-white"
                   />
                   <div className="p-4 border-t border-slate-800">
@@ -121,11 +161,11 @@ export default function OngoingResearch() {
                     </p>
                   </div>
                 </div>
-                
+
                 <div className="bg-slate-900/50 border border-slate-800 rounded-2xl overflow-hidden shadow-lg">
-                  <img 
-                    src="/images/Screenshot from 2026-03-15 15-52-47.png" 
-                    alt="AIA 1700 vs 30 THz Umbra Counts" 
+                  <img
+                    src="/images/aia1700-vs-30thz-umbra.png"
+                    alt="AIA 1700 vs 30 THz Umbra Counts"
                     className="w-full h-auto object-cover bg-white"
                   />
                   <div className="p-4 border-t border-slate-800">
@@ -136,7 +176,7 @@ export default function OngoingResearch() {
                 </div>
               </div>
             </div>
-            
+
             <div className="flex items-center gap-4 pt-6 border-t border-slate-800/50">
               <span className="flex items-center gap-2 text-sm font-medium text-slate-400 bg-slate-900/50 px-4 py-2 rounded-lg border border-slate-800 cursor-not-allowed">
                 <Construction size={16} className="text-amber-500" />
@@ -178,7 +218,7 @@ export default function OngoingResearch() {
                 </li>
                 <li className="text-sm text-slate-300 flex items-start gap-2">
                   <span className="text-amber-500 mt-1">✦</span>
-                  <strong>Next steps:</strong> Dopplergram cross-check of magnetic transients, quantitative comparison of timing, and extending DEM analysis to earlier/later phases.
+                  <span><strong>Next steps:</strong> Dopplergram cross-check of magnetic transients, quantitative comparison of timing, and extending DEM analysis to earlier/later phases.</span>
                 </li>
               </ul>
             </div>
@@ -198,7 +238,7 @@ export default function OngoingResearch() {
               <h3 className="text-2xl md:text-3xl font-bold text-slate-50">OpenMonitor</h3>
             </div>
             <p className="text-slate-300 leading-relaxed max-w-3xl mb-6">
-              A multi-decade viewer for solar flare data. Open-access, multi-instrument analysis on a shared timeline, fully browser-rendered. I am assisting in its development as a co-founder alongside a colleague.
+              A multi-decade viewer for solar flare data. Open-access, multi-instrument analysis on a shared timeline, fully browser-rendered. I co-founded it with a colleague and help develop it.
             </p>
             <div className="flex items-center gap-4 pt-6 border-t border-slate-800/50">
               <a href="https://solar.openmonitor.org/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-amber-500 bg-amber-500/10 hover:bg-amber-500/20 px-4 py-2 rounded-lg border border-amber-500/30 transition-colors">

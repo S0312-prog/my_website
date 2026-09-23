@@ -5,6 +5,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import OngoingResearch from './components/OngoingResearch';
 import Publications from './components/Publications';
+import Activities from './components/Activities';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
@@ -46,6 +47,7 @@ export default function App() {
         <Experience />
         <OngoingResearch />
         <Publications />
+        <Activities />
         <Contact />
       </main>
       <Footer />

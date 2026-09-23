@@ -2,6 +2,25 @@ import { motion } from 'motion/react';
 import { GraduationCap, Award } from 'lucide-react';
 
 export default function About() {
+  const interests = [
+    "Solar Flare Physics",
+    "X-ray Spectroscopy",
+    "Mid-Infrared Solar Diagnostics",
+    "Chromospheric Evaporation",
+    "Radiative Transfer Modeling",
+    "Multi-wavelength Data Integration",
+    "Solar Oscillations"
+  ];
+
+  const awards = [
+    { title: "AAS Studentship Award", detail: "57th Meeting of the AAS Solar Physics Division, Baltimore, USA (Aug 2026)" },
+    { title: "Top 10 Paper Selection", detail: "URSI Student Paper Competition (2026)" },
+    { title: "FAPESP Fellowship", detail: "Brazil (Feb 2026 – Present)" },
+    { title: "SAGE III Featured Paper/Poster Award", detail: "INPE, Brazil (Sep 2025)" },
+    { title: "CNPq Scholarship", detail: "Brazil (Aug 2025 – Jan 2026)" },
+    { title: "INSPIRE Scholarship", detail: "India (Nov 2021 – July 2024)" }
+  ];
+
   return (
     <section id="about" className="py-24 bg-slate-900/50 border-y border-slate-800/50">
       <div className="container mx-auto px-6 max-w-5xl">
@@ -13,9 +32,16 @@ export default function About() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">About Me</h2>
           <div className="w-20 h-1 bg-amber-500 rounded-full mb-8"></div>
-          <p className="text-lg text-slate-300 leading-relaxed">
-            I am a Master's student in Electrical and Computer Engineering with a focus on Solar Physics at Center for Radio Astronomy and Astrophysics Mackenzie, Mackenzie Presbyterian University in São Paulo, Brazil. My research revolves around the evolution and morphology of active regions at Mid-IR frequencies, chromospheric evaporation, and multi-wavelength data integration.
+          <p className="text-lg text-slate-300 leading-relaxed mb-8">
+            I am a Master's student in Electrical and Computer Engineering with a focus on Solar Physics at the Center for Radio Astronomy and Astrophysics Mackenzie (CRAAM), Mackenzie Presbyterian University in São Paulo, Brazil, supported by a FAPESP fellowship. My thesis follows the evolution and morphology of solar active regions at mid-infrared (30 THz) frequencies. I also work on sunspot oscillations, radiative transfer modeling of the lower solar atmosphere, and the X-ray and radio signatures of solar flares.
           </p>
+          <div className="flex flex-wrap gap-2">
+            {interests.map((interest) => (
+              <span key={interest} className="px-3 py-1 bg-amber-500/10 border border-amber-500/30 rounded-full text-xs font-medium text-amber-400">
+                {interest}
+              </span>
+            ))}
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 gap-8">
@@ -33,12 +59,13 @@ export default function About() {
               <div>
                 <h4 className="text-lg font-medium text-slate-200">MSc in Electrical and Computer Engineering</h4>
                 <p className="text-amber-500/80 text-sm mb-2">Mackenzie Presbyterian University, CRAAM | Aug 2025 – Present</p>
-                <p className="text-slate-400 text-sm">Focus: Solar Physics. Researching the evolution and morphology of Active Regions at Mid-IR Frequencies.</p>
+                <p className="text-slate-400 text-sm mb-2">Thesis: <em>Analysis of the Evolution and Morphology of Active Regions at Mid-IR Frequencies.</em></p>
+                <p className="text-slate-400 text-sm">Coursework: Space Climate, Electrodynamics, Theory of Electromagnetic Emission.</p>
               </div>
               <div>
                 <h4 className="text-lg font-medium text-slate-200">BSc (Honours) in Physics</h4>
                 <p className="text-amber-500/80 text-sm mb-2">University of Delhi, Miranda House | Nov 2021 – July 2024</p>
-                <p className="text-slate-400 text-sm">Recipient of the INSPIRE Scholarship (top 1% of national science students).</p>
+                <p className="text-slate-400 text-sm">CGPA 7.959/10. Recipient of the INSPIRE Scholarship (top 1% of national science students).</p>
               </div>
             </div>
           </motion.div>
@@ -54,48 +81,15 @@ export default function About() {
               <h3 className="text-2xl font-semibold text-slate-50">Awards & Honors</h3>
             </div>
             <ul className="space-y-4">
-              <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
-                <div>
-                  <p className="font-medium text-slate-200">SPD Studentship Award</p>
-                  <p className="text-sm text-slate-400">57th AAS/SPD Conference, Baltimore, USA (2026)</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
-                <div>
-                  <p className="font-medium text-slate-200">Top 10 Paper Selection</p>
-                  <p className="text-sm text-slate-400">URSI Student Paper Competition (2026)</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
-                <div>
-                  <p className="font-medium text-slate-200">FAPESP Fellowship</p>
-                  <p className="text-sm text-slate-400">Brazil (Feb 2026 – Present)</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
-                <div>
-                  <p className="font-medium text-slate-200">SAGE III Featured Paper/Poster Award</p>
-                  <p className="text-sm text-slate-400">INPE (2025)</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
-                <div>
-                  <p className="font-medium text-slate-200">CNPq Scholarship</p>
-                  <p className="text-sm text-slate-400">Brazil (Aug 2025 – Jan 2026)</p>
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
-                <div>
-                  <p className="font-medium text-slate-200">INSPIRE Scholarship</p>
-                  <p className="text-sm text-slate-400">India (Nov 2021 – July 2024)</p>
-                </div>
-              </li>
+              {awards.map((award) => (
+                <li key={award.title} className="flex items-start gap-3">
+                  <div className="w-1.5 h-1.5 rounded-full bg-amber-500 mt-2 shrink-0"></div>
+                  <div>
+                    <p className="font-medium text-slate-200">{award.title}</p>
+                    <p className="text-sm text-slate-400">{award.detail}</p>
+                  </div>
+                </li>
+              ))}
             </ul>
           </motion.div>
         </div>
